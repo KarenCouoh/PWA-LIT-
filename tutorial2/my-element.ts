@@ -5,13 +5,15 @@ import {map} from 'lit/directives/map.js';
 @customElement('my-element')
 class MyElement extends LitElement {
   @state()
-  items = new Set(['azul', 'negro', 'rojo', 'morado', 'rosa'])
+  names = ['amarrillo', 'negro', 'rojo', 'morado', 'rosa'];
 
   render() {
     return html`
-      <p>My unique fruits</p>
+      <p> colores con letra O </p>
       <ul>
-        ${map(this.items, (item) => html`<li>${item}</li>`)}
+      ${this.names
+        .filter((name) => name.match(/e/i))
+        .map((name) => html`<li>${name}</li>`)}
       </ul>
     `;
   }
