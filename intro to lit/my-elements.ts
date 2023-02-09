@@ -2,20 +2,21 @@
 import {LitElement, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 
-@customElement('my-element')
-export class MyElement extends LitElement {
+@customElement('more-expressions')
+export class MoreExpressions extends LitElement {
   @property()
-  message: string = 'Hello again.';
+  checked: boolean = false;
 
   render() {
     return html`
-      <p>${this.message}</p>
+      <div>
+        <input type="text" ?disabled=${!this.checked} value="Hello there.">
+      </div>
+      <label><input type="checkbox" @change=${this.setChecked}> Enable editing</label>
     `;
   }
-  }
 
-  changeName(event: Event) {
-    const input = event.target as HTMLInputElement;
-    this.name = input.value;
+  setChecked(event: Event) {
+    this.checked = (event.target as HTMLInputElement).checked;
   }
-
+}
