@@ -12,4 +12,10 @@ export class MyElement extends LitElement {
       <p>${this.message}</p>
     `;
   }
-}
+  }
+
+  changeName(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.name = input.value;
+  }
+
