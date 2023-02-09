@@ -12,7 +12,7 @@ class MyElement extends LitElement {
       <p> colores con letra O </p>
       <ul>
       ${this.names
-        .filter((name) => name.match(/e/i))
+        .filter((name) => name.match(/o/i))
         .map((name) => html`<li>${name}</li>`)}
       </ul>
     `;
