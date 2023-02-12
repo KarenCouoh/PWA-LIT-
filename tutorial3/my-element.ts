@@ -9,15 +9,15 @@ export class MyElement extends LitElement {
 
   removeItem(item: string) {
     const indexToRemove = this.groceries.indexOf(item);
-    this.groceries.splice(indexToRemove, 1);
+    this.groceries =
+        this.groceries.filter((_, i) => i !== indexToRemove);
   }
 
   render() {
     return html`
       ${map(this.groceries, (item) =>
-        html`<button @click=${() => this.removeItem(item)}>x</button> ${item}<br>`
+        html`<button @click=${() => this.removeItem(item)}>x</button>  ${item}<br>`
       )}
     `;
   }
 }
-
