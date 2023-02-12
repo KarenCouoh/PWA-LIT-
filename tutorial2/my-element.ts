@@ -34,5 +34,3 @@ class MyElement extends LitElement {
   }
 }
 
-
-completo
