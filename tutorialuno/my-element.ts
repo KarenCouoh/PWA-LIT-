@@ -75,4 +75,3 @@ export class ToDoList extends LitElement {
     this.input.value = '';
   }
 }
-
