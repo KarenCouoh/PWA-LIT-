@@ -1,20 +1,20 @@
 import {LitElement, html} from 'lit';
 import {customElement, state} from 'lit/decorators.js';
-import {map} from 'lit/directives/map.js';
+// TODO: import map directive.
 
 @customElement('my-element')
 class MyElement extends LitElement {
   @state()
-  names = ['amarrillo', 'negro', 'rojo', 'morado', 'rosa'];
+  items = new Set(['Apple', 'Banana', 'Grape', 'Orange', 'Lime'])
 
   render() {
     return html`
-      <p> colores con letra O </p>
+      <p>My unique fruits</p>
       <ul>
-      ${this.names
-        .filter((name) => name.match(/o/i))
-        .map((name) => html`<li>${name}</li>`)}
+        <!-- TODO: Utilize map directive to render items. -->
       </ul>
     `;
   }
 }
+
+
